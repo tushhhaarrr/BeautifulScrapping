@@ -1,45 +1,66 @@
-Company Revenue Web Scraping
-📊 Project Overview
-This project is dedicated to web scraping and compiling revenue data for the top 100 companies. The primary goal is to create a clean, accessible dataset for analysis and insights into the financial performance of these leading corporations. The collected data is stored in the CompaniesRevenueData.csv file.
+This repository contains two web scraping projects that use the Python library BeautifulSoup to extract data from websites. The first project scrapes financial data of the top 100 US companies, and the second one scrapes news articles from India.
 
-📈 Dataset: CompaniesRevenueData.csv
-This dataset contains key financial and organizational information about the top 100 companies, ranked by revenue.
+American Revenue Scrapping
+This project extracts data from the Wikipedia page "List of largest companies in the United States by revenue".
 
-Data Dictionary
-Here is a breakdown of the columns available in the dataset:
+Dataset: CompaniesRevenueData.csv
 
-Column	Description	Data Type
-Rank	The company's rank by revenue.	Integer
-Name	The official name of the company.	String
-Industry	The primary industry in which the company operates.	String
-Revenue (USD millions)	The company's total revenue in millions of US dollars.	Float
-Revenue growth	The percentage of revenue growth over the previous period.	String (Percentage)
-Employees	The total number of employees at the company.	Integer
-Headquarters	The city and state of the company's main headquarters.	String
+The data is stored in CompaniesRevenueData.csv and includes the following columns:
 
+Rank: The company's rank by revenue.
 
-✨ Features
-Comprehensive Data: Includes a variety of data points for each company, from revenue to employee count.
+Name: The official name of the company.
 
-Structured Format: The data is well-organized in a CSV file for easy use with various data analysis tools.
+Industry: The primary industry in which the company operates.
 
-Top 100 Companies: Focuses on the most influential companies by revenue, providing a valuable snapshot of the corporate landscape.
+Revenue (USD millions): The company's total revenue in millions of US dollars.
 
-🚀 Usage
-This dataset can be used for various purposes, including:
+Revenue growth: The percentage of revenue growth over the previous period.
 
-Market Analysis: Understand which industries are most profitable.
+Employees: The total number of employees at the company.
 
-Competitive Analysis: Compare the performance of companies within the same industry.
+Headquarters: The city and state of the company's main headquarters.
 
-Economic Research: Study the trends in the global economy by looking at the performance of top companies.
+India News Scrapping
+This project scrapes news articles related to India and saves them in a CSV file.
 
-Data Visualization: Create charts and graphs to visualize the distribution of revenue, employees, and growth across different sectors.
+Dataset: IndiaNews.csv
 
-<caption>Sample Data</caption>
-Rank	Name	Industry	Revenue (USD millions)	Revenue growth	Employees	Headquarters
-1	Walmart	Retail	680,985	5.1%	2,100,000	Bentonville, Arkansas
-2	Amazon	Retail and cloud computing	637,959	11.0%	1,556,000	Seattle, Washington
-3	UnitedHealth Group	Healthcare	400,278	7.7%	400,000	Minnetonka, Minnesota
-4	Apple	Electronics industry	391,035	2.0%	164,000	Cupertino, California
-5	CVS Health	Healthcare	372,809	4.2%	259,500	Woonsocket, Rhode Isla
+The data is stored in IndiaNews.csv and includes the following columns:
+
+webTitle: The title of the news article.
+
+sctionName: The section of the news source where the article was published (e.g., Politics, World news).
+
+publishdate: The date and time the article was published.
+
+url: The URL of the news article.
+
+Why BeautifulSoup over Selenium?
+For the web scraping tasks in this repository, BeautifulSoup is the ideal choice over a browser automation tool like Selenium. Here's why:
+
+Efficiency: BeautifulSoup is significantly faster and uses fewer system resources than Selenium. This is because it only parses the HTML content of a page and does not need to load a full web browser.
+
+Simplicity: For scraping static websites where the data is readily available in the page's HTML, BeautifulSoup provides a simple and direct way to access the data.
+
+No Need for Browser Automation: Selenium is designed for dynamic websites where content is loaded and rendered using JavaScript. Since the data for both projects in this repository is present in the initial HTML, the browser automation capabilities of Selenium are not needed.
+
+How to Use This Repository
+Clone the repository:
+
+Bash
+
+git clone https://github.com/tushhhaarrr/beautifulscrapping.git
+Install the required libraries:
+
+Bash
+
+pip install -r requirements.txt
+Run the Jupyter Notebooks:
+
+To run the American Revenue Scrapping project, open and run the cells in AmericanREvenue Scrapping/WikipediaScrapping.ipynb.
+
+To run the News Scrapping project, you will need to create a similar Jupyter Notebook in the NewsScrapping directory that scrapes the news source of your choice.
+
+Contributing
+Contributions to this project are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
